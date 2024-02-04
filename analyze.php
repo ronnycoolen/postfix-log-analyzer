@@ -12,7 +12,7 @@ foreach ($lines as $line) {
 			'from' => $matches[2]
 		];
 	}
-	if (preg_match('/([A-Z][a-z]*\s+\d+\s\d\d:\d\d:\d\d)\s.*: (.*?): to=<(.*?)>,.*status=(.*?) (.*)/', $line, $matches)) {
+	if (preg_match('/(\d{4}-\d{2}-\d{2}T\d\d:\d\d:\d\d).\d+\+\d+:\d+\s.*: (.*?): to=<(.*?)>,.*status=(.*?) (.*)/', $line, $matches)) {
 		if (isset($mails[$matches[2]])) {
 			$mails[$matches[2]]['date'] = new DateTime($matches[1]);
 			$mails[$matches[2]]['to'] = $matches[3];
